@@ -11,7 +11,7 @@ from openai import (
 )
 
 # ───────────────────────── Config ─────────────────────────
-st.set_page_config(page_title="ML Assistant -Developed By Abdalla El-Muaz ", page_icon="🧠", layout="wide")
+st.set_page_config(page_title="ML Assistant", page_icon="🧠", layout="wide")
 
 DB_PATH = "users.db"
 BASE_URL = "https://generativelanguage.googleapis.com/v1beta/openai/"
