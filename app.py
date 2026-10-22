@@ -11,7 +11,7 @@ from openai import (
 )
 
 # ───────────────────────── Config ─────────────────────────
-st.set_page_config(page_title="ML Buddy", page_icon="🧠", layout="wide")
+st.set_page_config(page_title="ML Assistant", page_icon="🧠", layout="wide")
 
 DB_PATH = "users.db"
 BASE_URL = "https://generativelanguage.googleapis.com/v1beta/openai/"
@@ -111,7 +111,7 @@ def display_name(user):
 
 # ───────────────────────── LLM ─────────────────────────
 BASE_INSTRUCTIONS = """
-You are ML Buddy, an expert and friendly Machine Learning teacher and assistant.
+You are ML Assistant, an expert and friendly Machine Learning teacher and assistant.
 
 SCOPE:
 - Answer only questions related to Machine Learning (definitions, types of ML: supervised,
@@ -317,7 +317,7 @@ SUGGESTIONS = [
 def auth_page():
     left, right = st.columns([1.15, 1], gap="large")
     with left:
-        st.markdown('<div class="brand">🧠 ML Buddy</div>', unsafe_allow_html=True)
+        st.markdown('<div class="brand">🧠 ML Assistant</div>', unsafe_allow_html=True)
         st.markdown(
             '<div class="hero-title">Learn Machine Learning,<br>one chat at a time.</div>'
             '<div class="hero-sub">Your friendly AI tutor that explains ML simply, in English, '
@@ -376,7 +376,7 @@ def chat_page(user):
     name = display_name(user)
 
     with st.sidebar:
-        st.markdown(f'<div class="brand">🧠 ML Buddy</div>', unsafe_allow_html=True)
+        st.markdown(f'<div class="brand">🧠 ML Assistant</div>', unsafe_allow_html=True)
         st.markdown(f'<span class="hello-pill">👋 {name}</span>', unsafe_allow_html=True)
         st.caption("Tip: tell me in the chat how you'd like to be called.")
         st.divider()
