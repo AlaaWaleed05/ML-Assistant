@@ -11,7 +11,7 @@ from openai import (
 )
 
 # ───────────────────────── Config ─────────────────────────
-st.set_page_config(page_title="ML Assistant-Developed By Abdalla Elmuaz", page_icon="🧠", layout="wide")
+st.set_page_config(page_title="ML Assistant-Developed By Abdalla Elmuaz", page_icon="🧠", layout="wide", initial_sidebar_state="expanded")
 
 DB_PATH = "users.db"
 BASE_URL = "https://generativelanguage.googleapis.com/v1beta/openai/"
@@ -242,7 +242,12 @@ html, body, [class*="css"], .stApp { font-family: 'Poppins','Cairo',sans-serif; 
     radial-gradient(circle at 80% 90%, rgba(236,72,153,.13), transparent 40%),
     #ffffff;
 }
-#MainMenu, footer, header [data-testid="stToolbar"] { visibility: hidden; }
+#MainMenu, footer, [data-testid="stAppDeployButton"], [data-testid="stMainMenu"] { visibility: hidden; }
+header[data-testid="stHeader"] { background: transparent; }
+[data-testid="stExpandSidebarButton"], [data-testid="stSidebarCollapseButton"],
+[data-testid="collapsedControl"], [data-testid="stSidebarCollapsedControl"] {
+  visibility: visible !important; display: flex !important;
+}
 .block-container { padding-top: 2rem; max-width: 1150px; }
 
 .brand { font-weight: 800; font-size: 1.1rem; color: #4C1D95; letter-spacing:.3px; }
