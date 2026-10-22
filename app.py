@@ -10,7 +10,7 @@ from openai import (
     OpenAI, APIError, APIConnectionError, RateLimitError, AuthenticationError,
 )
 
-# ───────────────────────── Config ─────────────────────────
+# Config
 st.set_page_config(page_title="ML Assistant-Developed By Abdalla Elmuaz", page_icon="🧠", layout="wide", initial_sidebar_state="expanded")
 
 DB_PATH = "users.db"
@@ -35,7 +35,7 @@ def get_client():
     return OpenAI(api_key=API_KEY, base_url=BASE_URL)
 
 
-# ───────────────────────── Database ─────────────────────────
+# Database
 def db():
     conn = sqlite3.connect(DB_PATH)
     conn.row_factory = sqlite3.Row
@@ -109,7 +109,7 @@ def display_name(user):
     return user["preferred_name"] or user["name"]
 
 
-# ───────────────────────── LLM ─────────────────────────
+# LLM 
 BASE_INSTRUCTIONS = """
 You are ML Assistant, an expert and friendly Machine Learning teacher and assistant.
 
@@ -196,7 +196,7 @@ def stream_reply(history, name, raw_holder, first_turn=False):
     raw_holder.append(full)
 
 
-# ───────────────────────── Styling ─────────────────────────
+# Styling 
 NEURAL_SVG = """
 <svg viewBox="0 0 520 420" xmlns="http://www.w3.org/2000/svg" class="neural">
   <defs>
@@ -318,7 +318,7 @@ SUGGESTIONS = [
 ]
 
 
-# ───────────────────────── Pages ─────────────────────────
+# Pages 
 def auth_page():
     left, right = st.columns([1.15, 1], gap="large")
     with left:
@@ -451,7 +451,7 @@ def chat_page(user):
                 st.rerun()
 
 
-# ───────────────────────── Main ─────────────────────────
+# Main 
 init_db()
 st.markdown(CSS, unsafe_allow_html=True)
 
